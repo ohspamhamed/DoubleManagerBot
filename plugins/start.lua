@@ -88,7 +88,7 @@ if query == 'home' then
             local keyboard = do_keyboard_home()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-        if query == 'share' then
+if query == 'share' then
      api.sendContact(msg.from.id, '+12818539367', 'Arian')
 end
     end
