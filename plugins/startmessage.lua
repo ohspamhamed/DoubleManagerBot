@@ -81,6 +81,7 @@ local function do_keyboard_private()
             },
             {
           {text = '☘ Full Info', callback_data = '/fullinfo'}
+            }
     }
     return keyboard
 end
