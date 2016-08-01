@@ -156,7 +156,13 @@ return {
                     ..'You Can Talk Admins With :\n'
                     ..'• Press On Chat With Admin\n'
                     ..'\n[Id Admin](https://telegram.me/arian721))'
-                    ..'\n• Send /c [feedback]\n',
+                    ..'\n• Send /c [feedback]\n'
+                    ..'My AntiSpams\n'
+                    ..'• You can *kick or ban* users (even in normal groups) by reply/username\n'
+                    ..'• Set rules and a description\n'
+                    ..'• Turn on a configurable *anti-flood* system\n'
+                    ..'• Customize the *welcome message*, also with gif and stickers\n'
+                    ..'\nYou can report bugs/send feedbacks/ask a question to my creator just using "`/c <feedback>`" command. EVERYTHING IS WELCOME!',
             group_success = '_I\'ve sent you the help message in private_',
             group_not_success = '_Please message me first so I can message you_',
             initial = 'Choose the *role* to see the available commands:',
