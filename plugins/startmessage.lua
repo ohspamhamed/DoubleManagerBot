@@ -77,7 +77,7 @@ local function do_keyboard_private()
 	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD6BPZlBWXseoZqBHg'},
             },
             {
-          {text = '☘ Full Info', callback_data = '/infofull'}
+          {text = '☘ Full Info', callback_data = '!private'}
             }
     }
     return keyboard
