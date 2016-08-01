@@ -85,7 +85,7 @@ if query == 'robot' then
 end
 if query == 'home' then
             local text = [[🔥 The *KeyWord* Info Part _Select One_]]
-            local keyboard = do_keyboard_private()
+            local keyboard = do_keyboard_home()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
