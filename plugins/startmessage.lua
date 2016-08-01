@@ -79,7 +79,7 @@ local function do_keyboard_private()
                 {text = 'ℹ Chat (Updating...)', callback_data = '/start'},
             },
             {
-          {text = '•Comming Soon...', callback_data = '!home'}
+          {text = '● Other Onfo ●', callback_data = '!home'}
             }
     }
     return keyboard
