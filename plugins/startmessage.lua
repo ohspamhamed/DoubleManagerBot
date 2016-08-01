@@ -3,17 +3,17 @@ local function make_keyboard(mod, mod_current_position)
 	keyboard.inline_keyboard = {}
 	if mod then --extra options for the mod
 	    local list = {
-	        ['Banhammer'] = '!banhammer',
-	        ['Group info'] = '!info',
-	        ['Flood manager'] = '!flood',
-	        ['Media settings'] = '!media',
-	        ['Welcome settings'] = '!welcome',
-	        ['General settings'] = '!settings',
-	        ['Extra commands'] = '!extra',
-	        ['Warns'] = '!warns',
-	        ['Characters strictness'] = '!char',
-	        ['Links'] = '!links',
-	        ['Languages'] = '!lang'
+	        ['🐳Banhammer'] = '!banhammer',
+	        ['🐳Group info'] = '!info',
+	        ['🐳Flood manager'] = '!flood',
+	        ['🐳Media settings'] = '!media',
+	        ['🐳Welcome settings'] = '!welcome',
+	        ['🐳General settings'] = '!settings',
+	        ['🐳Extra commands'] = '!extra',
+	        ['🐳Warns'] = '!warns',
+	        ['🐳Characters strictness'] = '!char',
+	        ['🐳Links'] = '!links',
+	        ['🐳Languages'] = '!lang'
         }
         local line = {}
         for k,v in pairs(list) do
@@ -21,7 +21,7 @@ local function make_keyboard(mod, mod_current_position)
             if next(line) then
                 local button = {text = '📍'..k, callback_data = v}
                 --change emoji if it's the current position button
-                if mod_current_position == v:gsub('!', '') then button.text = '💡 '..k end
+                if mod_current_position == v:gsub('!', '') then button.text = '🐳 '..k end
                 table.insert(line, button)
                 table.insert(keyboard.inline_keyboard, line)
                 line = {}
@@ -39,11 +39,11 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-		bottom_bar = {{text = '🔰 User commands', callback_data = '!user'}}
+		bottom_bar = {{text = '🐳 Users', callback_data = '!user'}}
 	else
-	    bottom_bar = {{text = '🔰 Admin commands', callback_data = '!mod'}}
+	    bottom_bar = {{text = '🐳 Admins', callback_data = '!mod'}}
 	end
-	table.insert(bottom_bar, {text = 'Info', callback_data = '!info_button'}) --insert the "Info" button
+	table.insert(bottom_bar, {text = '🐳 About', callback_data = '!info_button'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
@@ -75,7 +75,7 @@ local function do_keyboard_private()
 	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD6BPZlBWXseoZqBHg'},
         },
         {
-          {text = '👤 Chat With Admin', callback_data = '!contactus'}
+          {text = '👤 Chat With Admin', callback_data = '/chat'}
     }
     return keyboard
 end
