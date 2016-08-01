@@ -17,7 +17,7 @@ local function do_keyboard_private()
     		{text = '📡 Admins', callback_data = '!channel'},
 	    },
 	    {
-	        {text = '� Other�', callback_data = '!robot'},
+	        {text = '� Other�', callback_data = '!robot'}
         }
     }
     return keyboard
