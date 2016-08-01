@@ -73,8 +73,8 @@ local function do_keyboard_private()
 	    {
 	        {text = '🐳 Commands Managinng Group,Info Of Key Word!', callback_data = '!user'}
 	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD6BPZlBWXseoZqBHg'},
-        },
-        {
+            },
+            {
           {text = '👤 Chat With Admin', callback_data = '/chat'}
     }
     return keyboard
