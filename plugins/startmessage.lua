@@ -19,7 +19,7 @@ local function make_keyboard(mod, mod_current_position)
         for k,v in pairs(list) do
             --if mod_current_position ~= v:gsub('!', '') then --(to remove the current tab button)
             if next(line) then
-                local button = {text = '📍'..k, callback_data = v}
+                local button = {text = ' '..k, callback_data = v}
                 --change emoji if it's the current position button
                 if mod_current_position == v:gsub('!', '') then button.text = '🐳 '..k end
                 table.insert(line, button)
@@ -75,8 +75,7 @@ local function do_keyboard_private()
 	        {text = '🐳 Commands Managinng Group,Info Of Key Word!', callback_data = '!user'},
 	    },
 	    {
-	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD6BPZlBWXseoZqBHg'},
-                {text = 'ℹ Chat (Updating...)', callback_data = '/start'},
+	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD9mfPqPZByA3yaQ-Q'},
             },
             {
           {text = '● Other Onfo ●', callback_data = '!home'}
