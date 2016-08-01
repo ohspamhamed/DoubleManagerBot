@@ -132,7 +132,7 @@ end
 return {
 	action = action,
 	triggers = {
-	    '^/(start)@BeatBotTeamBot$',
+	    '^/(start)@KeyWordRobot$',
 	    '^/(start)$',
 	    '^/(help)$',
 	    '^###cb:!(home)',
