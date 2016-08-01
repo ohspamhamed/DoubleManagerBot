@@ -73,7 +73,6 @@ local function do_keyboard_private()
     		{text = '🐳 Id Admin', url = 'https://telegram.me/Arian721'},
     		{text = '🐳 Id Admin', url = 'https://telegram.me/Kiarash_Gh14'},
 	    },
-	    },
 	    {
 	        {text = '🐳 Commands Managinng Group,Info Of Key Word!', callback_data = '!user'},
 	    },
