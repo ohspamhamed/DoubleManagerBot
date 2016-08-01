@@ -47,7 +47,7 @@ local function do_keyboard_channel()
 end
 
 local action = function(msg, blocks, ln)
-    if blocks[1] == 'fullinfo' then
+    if blocks[1] == 'infofull' then
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
@@ -75,12 +75,6 @@ if query == 'robot' then
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'buygroup' then
-            local text = [[_Please wait after payment_ 
-_We will be call to you_]]
-            local keyboard = do_keyboard_buygroup()
-        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
-end
 if query == 'home' then
             local text = [[📍*Select One*📍]]
             local keyboard = do_keyboard_private()
@@ -93,9 +87,8 @@ end
 return {
 	action = action,
 	triggers = {
-	    '^/(start)@KeyWordRoBot$',
-	    '^/(start)$',
-	    '^/(help)$',
+	    '^/(infofull)@KeyWordRoBot$',
+	    '^/(infofull)$',
 	    '^###cb:!(home)',
 	    '^###cb:!(channel)',
 	    '^###cb:!(robot)',
