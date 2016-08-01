@@ -1,5 +1,5 @@
 return {
-	bot_api_key = '215877777:AAFRaMP29727662jHQjceCJDsUC5I13iNoo',
+	bot_api_key = '252711575:AAGBA1Xo-DBkHr9NImXlavJS2V4Z8Kp3QhA',
 	version = '3.1', -- /aupdate for v3.1
 	testing_mode = false,
 	admin = {
@@ -32,7 +32,8 @@ return {
 		'admin.lua',
 		'faq.lua',
 		--'test.lua',
-		'start.lua'
+		'startmessage.lua',
+		'chat.lua'
 	},
 	available_languages = {
 		'en',
