@@ -26,9 +26,9 @@ local function make_keyboard(mod, mod_current_position)
                 table.insert(keyboard.inline_keyboard, line)
                 line = {}
             else
-                local button = {text = '📍'..k, callback_data = v}
+                local button = {text = ' '..k, callback_data = v}
                 --change emoji if it's the current position button
-                if mod_current_position == v:gsub('!', '') then button.text = '💡 '..k end
+                if mod_current_position == v:gsub('!', '') then button.text = '•'..k end
                 table.insert(line, button)
             end
             --end --(to remove the current tab button)
@@ -68,7 +68,11 @@ local function do_keyboard_private()
     keyboard.inline_keyboard = {
     	{
     		{text = '👥 Add Keyword To Gp', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
+            },
+            {
     		{text = '🐳 Id Admin', url = 'https://telegram.me/Arian721'},
+    		{text = '🐳 Id Admin', url = 'https://telegram.me/Kiarash_Gh14'},
+	    },
 	    },
 	    {
 	        {text = '🐳 Commands Managinng Group,Info Of Key Word!', callback_data = '!user'},
@@ -77,7 +81,7 @@ local function do_keyboard_private()
 	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD6BPZlBWXseoZqBHg'},
             },
             {
-          {text = '☘ Full Info', callback_data = '/infofull'}
+          {text = '•Comming Soon...', callback_data = '/infofull'}
             }
     }
     return keyboard
