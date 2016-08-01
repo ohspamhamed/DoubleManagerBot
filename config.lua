@@ -17,7 +17,6 @@ return {
 		'all.lua',
 		'banhammer.lua',
 		'users.lua',
-		'help.lua',
 		'rules.lua',
 		'about.lua',
 		'flag.lua',
