@@ -31,7 +31,6 @@ return {
 		'admin.lua',
 		'faq.lua',
 		'startmessage.lua',
-		'fullinfo.lua',
                 'start.lua'
 	},
 	available_languages = {
