@@ -35,7 +35,7 @@ local function do_keyboard_private()
     		{text = '📡 Channels', callback_data = '!channel'},
 	    },
 		{
-	        {text = '📥 Contact Us 📤', callback_data = '/chat'},
+	        {text = '📥 Contact Us 📤', callback_data = '!channel'},
         },
 		{
 	        {text = 'About Us 👥', callback_data = '!aboutus'},
