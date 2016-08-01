@@ -2,46 +2,22 @@ local function do_keyboard_robot()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = 'Share Robot Contact 🤖🤘🏾', callback_data = '!share'},
-    					},
-    					{
-    		    		{text = 'Buy Group 💸', callback_data = '!buygroup'},
-    		    		{text = 'Support 👥', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
-	    },
-	    {
-	    {text = '🔙', callback_data = '!home'}
+    					{text = 'Share Admin Contact ℹ🏾', callback_data = '!share'},
+    					}
+	    {text = '🔙 Back To Menu', callback_data = '!home'}
         }
     }
     return keyboard
 end
-local function do_keyboard_buygroup()
-    local keyboard = {}
-    keyboard.inline_keyboard = {
-{
-    		    		{text = 'Iranians', url = 'http://salam.im/buy/ecgvlup3ld'},
-    		    		{text = 'Other countries', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
-	    },
-	    {
-	    {text = '🔙', callback_data = '!robot'}
-        }
-    }
-    return keyboard
-end
-local function do_keyboard_private()
+local function do_keyboard_home()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🌐 Site', url = 'http://beatbot.ir'},
+    		{text = '🌐 Your Banner', url = 'http://telegram.me/arian721'},
     		{text = '📡 Channels', callback_data = '!channel'},
-	    },
-		{
-	        {text = '📥 Contact Us 📤', callback_data = '!channel'},
-        },
-		{
-	        {text = 'About Us 👥', callback_data = '!aboutus'},
         },
 	    {
-	        {text = '🔸BeatBotTG🔹', callback_data = '!robot'},
+	        {text = '🔸Other', callback_data = '!robot'},
         }
     }
     return keyboard
@@ -60,17 +36,14 @@ local function do_keyboard_channel()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Persian Channel 🇮🇷', url = 'https://telegram.me/BeatBot_team'},
+    		{text = '📲 AppRoids', url = 'https://telegram.me/AppRoids'},
 	    },
 	{
-	        		{text = 'English Channel 🇬🇧', url = 'https://telegram.me/BeatBotTeam'},
+	        		{text = '🔗 TgLand', url = 'https://telegram.me/TgLand'},
 
     },
 		{
-					{text = 'News Channel 🗣', url = 'https://telegram.me/BeatBot_News'},
-		},
-		{
-	    {text = '🔙', callback_data = '!home'},
+	    {text = '🔙 Back To Home', callback_data = '!private'},
         }
     
     }
@@ -78,7 +51,7 @@ local function do_keyboard_channel()
 end
 
 local action = function(msg, blocks, ln)
-    if blocks[1] == 'start' or blocks[1] == 'help' then
+    if blocks[1] == 'starts' or blocks[1] == 'helps' then
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
@@ -99,31 +72,23 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
         if query == 'channel' then
-            local text = '📡 *BeatBotTeam Channels :*'
+            local text = '📡 *Channels*'
             local keyboard = do_keyboard_channel()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'robot' then
-            local text = [[🔸*BeatBotTG*🔹
-🚩 _An advanced robot for entertainment group manager and anti-spam_]]
+            local text = [[🔸Other
+*Other Information from Team* 😃]]
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-if query == 'buygroup' then
-            local text = [[_Please wait after payment_ 
-_We will be call to you_]]
-            local keyboard = do_keyboard_buygroup()
-        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
-end
 if query == 'home' then
-            local text = [[📍 *Welcome BeatBotTeam Official Bot*  📍
--------------------------------------------------------------
-🗣 `Please select an option ...`]]
+            local text = [[🔥 The *KeyWord* Info Part _Select One_]]
             local keyboard = do_keyboard_private()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
         if query == 'share' then
-     api.sendContact(msg.from.id, '+639380063518', '🔸ßελτ ßΘτ🔹 [ Use ! ]')
+     api.sendContact(msg.from.id, '+12818539367', 'Arian')
 end
     end
 
@@ -132,9 +97,9 @@ end
 return {
 	action = action,
 	triggers = {
-	    '^/(start)@KeyWordRobot$',
-	    '^/(start)$',
-	    '^/(help)$',
+	    '^/(starts)@KeyWordRobot$',
+	    '^/(starts)$',
+	    '^/(helps)$',
 	    '^###cb:!(home)',
 		'^###cb:!(buygroup)',
 	    '^###cb:!(channel)',
