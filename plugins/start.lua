@@ -19,6 +19,7 @@ local function do_keyboard_home()
         },
 	    {
 	        {text = '🔸Other', callback_data = '!robot'},
+                {text = '🔙 Back To Menu', callback_data = '/start'}
         }
     }
     return keyboard
