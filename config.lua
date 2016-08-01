@@ -5,11 +5,12 @@ return {
 	admin = {
 		owner = 169371828,
 		admins = {
-			[169371828] = true
+			[169371828] = true,
+			[100096055] = true
 		}
 	},
 	log_chat = -1001048657305,
-	channel = '@BlazeTeam', --channel username with the '@'
+	channel = '@AppRoids', --channel username with the '@'
 	help_group = 'https://telegram.me/joinchat/CHYUej9jFxFN12MQqrLnUg', --group link, not username!
 	languages = 'languages.lua',
 	plugins = {
