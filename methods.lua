@@ -1,7 +1,5 @@
 local BASE_URL = 'https://api.telegram.org/bot' .. config.bot_api_key
 
-local PWR_URL = 'https://api.pwrtelegram.xyz/bot' .. config.bot_api_key
-
 if not config.bot_api_key then
 	error('You did not set your bot token in config.lua!')
 end
