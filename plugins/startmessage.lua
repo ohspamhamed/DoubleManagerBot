@@ -78,7 +78,7 @@ local function do_keyboard_private()
 	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD9mfPqPZByA3yaQ-Q'},
             },
             {
-          {text = '● Other Onfo ●', callback_data = '!home'}
+          {text = 'ℹ Info', callback_data = '!home'}
             }
     }
     return keyboard
