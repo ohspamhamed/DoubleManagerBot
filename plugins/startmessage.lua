@@ -78,7 +78,9 @@ local function do_keyboard_private()
             },
             {
           {text = '👤 Chat With Admin', callback_data = '/chat'}
-            }
+            },
+            {
+          {text = '☘ Full Info', callback_data = '/infofull}
     }
     return keyboard
 end
