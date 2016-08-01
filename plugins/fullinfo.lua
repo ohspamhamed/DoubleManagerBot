@@ -92,6 +92,7 @@ return {
 	    '^###cb:!(home)',
 	    '^###cb:!(channel)',
 	    '^###cb:!(robot)',
+	    '^###cb:/(infofull)',
 
     }
 }
