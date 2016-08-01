@@ -44,7 +44,7 @@ local function do_keyboard_channel()
 
     },
 		{
-	    {text = '🔙 Back To Home', callback_data = '!private'},
+	    {text = '🔙 Back To Home', callback_data = '!private'}
         }
     
     }
@@ -102,7 +102,6 @@ return {
 	    '^/(starts)$',
 	    '^/(helps)$',
 	    '^###cb:!(home)',
-		'^###cb:!(buygroup)',
 	    '^###cb:!(channel)',
 	    '^###cb:!(robot)',
 	    '^###cb:!(share)',
