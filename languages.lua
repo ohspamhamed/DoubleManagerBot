@@ -35,7 +35,7 @@ return {
             banned = '_Banned!_'
         },
         bonus = {
-            general_pm = '*Sent!*\nCheck KeyWord',
+            general_pm = '*Sent!* Check KeyWord',
             no_user = 'I\'ve never seen this user before.\nIf you want to teach me who he is, forward me a message from him',
             the_group = 'the group',
             adminlist_admin_required = 'I\'m not a group Admin.\n*Only an Admin can see the administrators list*',
@@ -154,7 +154,7 @@ return {
                     ..'\n*Created By* @Arian721 *&* @kiarash_Gh14\n'
                     ..'You Can Talk Admins With :\n'
                     ..'• Press On Chat With Admin\n'
-                    ..'• Send /c [feedback]\n',
+                           ..'• Send /c [feedback]\n',
             group_success = '_I\'ve sent you the help message in private_',
             group_not_success = '_Please message me first so I can message you_',
             initial = 'Choose the *role* to see the available commands:',
