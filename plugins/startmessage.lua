@@ -71,7 +71,9 @@ local function do_keyboard_private()
     		{text = '🐳 Id Admin', url = 'https://telegram.me/Arian721'},
 	    },
 	    {
-	        {text = '🐳 Commands Managinng Group,Info Of Key Word!', callback_data = '!user'}
+	        {text = '🐳 Commands Managinng Group,Info Of Key Word!', callback_data = '!user'},
+	    },
+	    {
 	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD6BPZlBWXseoZqBHg'},
             },
             {
