@@ -52,8 +52,6 @@ local function do_keybaord_credits()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
-    		{text = 'GitHub', url = 'https://github.com/RememberTheAir/GroupButler'},
     		{text = 'Rate me!', url = 'https://telegram.me/storebot?start='..bot.username},
 		},
 		{
@@ -78,9 +76,10 @@ local function do_keyboard_private()
 	    },
 	    {
 	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD6BPZlBWXseoZqBHg'},
+                {text = 'ℹ Chat (Updating...)', callback_data = '!chat'},
             },
             {
-          {text = '•Comming Soon...', callback_data = '/infofull'}
+          {text = '•Comming Soon...', callback_data = '/inf'}
             }
     }
     return keyboard
