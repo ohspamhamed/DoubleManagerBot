@@ -78,6 +78,7 @@ local function do_keyboard_private()
             },
             {
           {text = '👤 Chat With Admin', callback_data = '/chat'}
+            }
     }
     return keyboard
 end
