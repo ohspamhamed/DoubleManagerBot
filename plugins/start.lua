@@ -18,8 +18,7 @@ local function do_keyboard_home()
     		{text = '📡 Channels', callback_data = '!channel'},
         },
 	    {
-	        {text = '🔸Other', callback_data = '!robot'},
-                {text = '🔙 Back To Menu', callback_data = '/start'}
+	        {text = '🔸Other', callback_data = '!robot'}
         }
     }
     return keyboard
