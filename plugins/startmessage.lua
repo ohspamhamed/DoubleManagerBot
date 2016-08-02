@@ -3,7 +3,7 @@ local function make_keyboard(mod, mod_current_position)
 	keyboard.inline_keyboard = {}
 	if mod then --extra options for the mod
 	    local list = {
-	        ['بن/مسدود کردن= '!banhammer',
+	        ['بن/مسدود کردن= ] = !banhammer',
 	        ['اطلاعات گروه'] = '!info',
 	        ['فلود منیجر'] = '!flood',
 	        ['تنظیمات مدیا'] = '!media',
