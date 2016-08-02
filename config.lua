@@ -35,18 +35,7 @@ return {
                 'start.lua'
 	},
 	available_languages = {
-		'en',
-		'it',
-		'es',
-		'br',
-		'ru',
-		'de',
-		'sv',
-		'ar',
-		'fr',
-		'tc',
 		'fa'
-		--more to come
 	},
 	media_list = {
 		'image',
