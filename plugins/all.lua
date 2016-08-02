@@ -40,12 +40,12 @@ local function changeCharSettings(chat_id, field, ln)
     local status = db:hget(hash, field)
     local text
     if status == 'allowed' then
-        db:hset(hash, field, 'kick')
+        db:hset(hash, field, 'اخراج')
         text = lang[ln].settings.char[field:lower()..'_kick']
-    elseif status == 'kick' then
-        db:hset(hash, field, 'ban')
+    elseif status == 'اخراج' then
+        db:hset(hash, field, 'بن/مسدود')
         text = lang[ln].settings.char[field:lower()..'_ban']
-    elseif status == 'ban' then
+    elseif status == 'بن/مسدود' then
         db:hset(hash, field, 'allowed')
         text = lang[ln].settings.char[field:lower()..'_allow']
     else
@@ -90,16 +90,16 @@ end
 local function getFloodSettings_text(chat_id, ln)
     local status = db:hget('chat:'..chat_id..':settings', 'Flood') or 'yes' --check (default: disabled)
     if status == 'no' then
-        status = '✅ | ON'
+        status = '✅ |مجاز ON'
     elseif status == 'yes' then
-        status = '❌ | OFF'
+        status = '❌ غیر مجاز| OFF'
     end
     local hash = 'chat:'..chat_id..':flood'
     local action = (db:hget(hash, 'ActionFlood')) or 'kick'
     if action == 'kick' then
         action = '⚡️ '..action
     else
-        action = '⛔ ️'..action
+        action = '⛔ ️ممنوع'..action
     end
     local num = (db:hget(hash, 'MaxFlood')) or 5
     local exceptions = {
@@ -115,9 +115,9 @@ local function getFloodSettings_text(chat_id, ln)
         --ignored by the antiflood-> yes, no
         local exc_status = (db:hget(hash, media)) or 'no'
         if exc_status == 'yes' then
-            exc_status = '✅'
+            exc_status = '✅ مجاز' 
         else
-            exc_status = '❌'
+            exc_status = '❌ ممنوع'
         end
         list_exc = list_exc..'• `'..translation..'`: '..exc_status..'\n'
     end
@@ -150,7 +150,7 @@ end
 
 local function usersettings_table(settings)
     local return_table = {}
-    local icon_yes, icon_no = '👤', '👥'
+    local icon_yes, icon_no = 'فقط مدیران', 'همه کاربران'
     for field, status in pairs(settings) do
         if field == 'Modlist' or field == 'About' or field == 'Rules' or field == 'Extra' then
             if status == 'yes' then
@@ -166,7 +166,7 @@ end
 
 local function adminsettings_table(settings)
     local return_table = {}
-    local icon_yes, icon_no = '🚫', '✅'
+    local icon_yes, icon_no = '🚫 ممنوع ', '✅' مجاز 
     for field, status in pairs(settings) do
         if field == 'Flood' or field == 'Report' or field == 'Welcome' or field == 'Admin_mode' then
             if status == 'yes' then
@@ -226,7 +226,7 @@ local function doKeyboard_menu(chat_id, ln)
     local max = (db:hget('chat:'..chat_id..':warnsettings', 'max')) or 3
     action = (db:hget('chat:'..chat_id..':warnsettings', 'type')) or 'kick'
     local warn = {
-        {text = '➖', callback_data = 'menu:DimWarn:'..chat_id},
+        {text = '➖ کم کردن', callback_data = 'menu:DimWarn:'..chat_id},
         {text = '📍'..max..' 🔨️'..action, callback_data = 'menu:ActionWarn:'..chat_id},
         {text = '➕', callback_data = 'menu:RaiseWarn:'..chat_id},
     }
@@ -305,9 +305,9 @@ local action = function(msg, blocks, ln)
                 for i, media in pairs(config.media_list) do
                     local status = (db:hget('chat:'..chat_id..':media', media)) or 'allowed'
                     if status == 'allowed' then
-                        status = '✅'
+                        status = '✅ باز'
                     else
-                        status = '🔐 '..status
+                        status = '🔐 قفل'..status
                     end
                     text = text..'`'..media..'` ≡ '..status..'\n'
                 end
@@ -317,7 +317,7 @@ local action = function(msg, blocks, ln)
             return
         end
     end
-    if blocks[1] == 'menu' then
+    if blocks[1] == 'settings' then
         if not(msg.chat.type == 'private') and not msg.cb then
             if not is_mod(msg) then return end --only mods can use this
             keyboard = doKeyboard_menu(chat_id, ln)
@@ -365,7 +365,7 @@ return {
 	action = action,
 	triggers = {
 		'^/(dashboard)$',
-		'^/(menu)$',
+		'^/(settings)$',
 		
 		'^###cb:(dashboard):(%a+):(-%d+)',
     	
