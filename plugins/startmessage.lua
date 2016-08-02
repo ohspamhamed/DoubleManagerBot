@@ -3,17 +3,17 @@ local function make_keyboard(mod, mod_current_position)
 	keyboard.inline_keyboard = {}
 	if mod then --extra options for the mod
 	    local list = {
-	        ['🐳Banhammer'] = '!banhammer',
-	        ['🐳Group info'] = '!info',
-	        ['🐳Flood manager'] = '!flood',
-	        ['🐳Media settings'] = '!media',
-	        ['🐳Welcome settings'] = '!welcome',
-	        ['🐳General settings'] = '!settings',
-	        ['🐳Extra commands'] = '!extra',
-	        ['🐳Warns'] = '!warns',
-	        ['🐳Characters strictness'] = '!char',
-	        ['🐳Links'] = '!links',
-	        ['🐳Languages'] = '!lang'
+	        ['بن/مسدود کردن= '!banhammer',
+	        ['اطلاعات گروه'] = '!info',
+	        ['فلود منیجر'] = '!flood',
+	        ['تنظیمات مدیا'] = '!media',
+	        ['تنظیمات خوش آمد گویی'] = '!welcome',
+	        ['تنظیمات ظاهری'] = '!settings',
+	        ['دستورات پیشرفته'] = '!extra',
+	        ['اخطار ها'] = '!warns',
+	        ['تنظیمات کاراکتر ها'] = '!char',
+	        ['لینک ها'] = '!links',
+	        ['زبان ها'] = '!lang'
         }
         local line = {}
         for k,v in pairs(list) do
@@ -39,11 +39,11 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-		bottom_bar = {{text = '🐳 Users', callback_data = '!user'}}
+		bottom_bar = {{text = '🐳کاربران عادی ', callback_data = '!user'}}
 	else
-	    bottom_bar = {{text = '🐳 Admins', callback_data = '!mod'}}
+	    bottom_bar = {{text = '🐳 ادمین های گروه', callback_data = '!mod'}}
 	end
-	table.insert(bottom_bar, {text = '🐳 About', callback_data = '!info_button'}) --insert the "Info" button
+	table.insert(bottom_bar, {text = '🐳 درباره', callback_data = '!info_button'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
@@ -52,7 +52,7 @@ local function do_keybaord_credits()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Rate me!', url = 'https://telegram.me/storebot?start='..bot.username},
+    		{text = 'به من رای بده', url = 'https://telegram.me/storebot?start='..bot.username},
 		},
 		{
 		    {text = '🔙', callback_data = '!user'}
@@ -65,20 +65,20 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '👥 Add Keyword To Gp', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
+    		{text = '👥 اضافه کردن من به گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
             },
             {
-    		{text = '🐳 Id Admin', url = 'https://telegram.me/Arian721'},
-    		{text = '🐳 Id Admin', url = 'https://telegram.me/Kiarash_Gh14'},
+    		{text = '🐳 ایدی ادمین', url = 'https://telegram.me/Arian721'},
+    		{text = '🐳 ایدی ادمین', url = 'https://telegram.me/Kiarash_Gh14'},
 	    },
 	    {
-	        {text = '🐳 Commands Managinng Group,Info Of Key Word!', callback_data = '!user'},
+	        {text = '🐳 همه دستورات گروه', callback_data = '!user'},
 	    },
 	    {
-	        {text = '🎩 Support', url = 'https://telegram.me/joinchat/ChhotD9mfPqPZByA3yaQ-Q'},
+	        {text = '🎩 گروه ساپورت', url = 'https://telegram.me/joinchat/ChhotD9mfPqPZByA3yaQ-Q'},
             },
             {
-          {text = 'ℹ Info', callback_data = '!home'}
+          {text = 'ℹ اطلاعات بیشتر', callback_data = '!home'}
             }
     }
     return keyboard
@@ -88,7 +88,7 @@ local function do_keyboard_startme()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Please Start KeyWord 🐳', url = 'https://telegram.me/'..bot.username}
+    		{text = 'منو استارت کن 🐳', url = 'https://telegram.me/'..bot.username}
 	    }
     }
     return keyboard
