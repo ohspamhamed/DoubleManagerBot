@@ -29,7 +29,7 @@ local function doKeyboard_media(chat_id)
     table.insert(keyboard.inline_keyboard, {{text = 'Warns (media) 📍 '..max, callback_data = 'mediallert'}})
     local warn = {
         {text = '➖ کم کردن', callback_data = 'mediawarn:dim:'..chat_id},
-        {text = '➕' افزودن, callback_data = 'mediawarn:raise:'..chat_id},
+        {text = '➕ افزودن', callback_data = 'mediawarn:raise:'..chat_id},
     }
     table.insert(keyboard.inline_keyboard, warn)
     return keyboard
