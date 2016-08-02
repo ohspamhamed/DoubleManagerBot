@@ -2,10 +2,10 @@ local function do_keyboard_robot()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = 'Share Admin Contact ℹ🏾', callback_data = '!share'},
+    					{text = 'در حال اپدیت ℹ🏾', callback_data = '!sharee'},
     					},
                                         {
-	    {text = '🔙 Back To Menu', callback_data = '!home'}
+	    {text = '🔙 برگشت', callback_data = '!home'}
         }
     }
     return keyboard
@@ -14,11 +14,11 @@ local function do_keyboard_home()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🌐 Your Banner', url = 'http://telegram.me/arian721'},
-    		{text = '📡 Channels', callback_data = '!channel'},
+    		{text = '🌐 تبلیغ شما', url = 'http://telegram.me/arian721'},
+    		{text = '📡 کانال ها', callback_data = '!channel'},
         },
 	    {
-	        {text = '🔸Other', callback_data = '!robot'}
+	        {text = '🔸دیگر', callback_data = '!robot'}
         }
     }
     return keyboard
@@ -28,7 +28,7 @@ local function do_keyboard_startme()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🙃👉 Click here ! 👈🙃', url = 'https://telegram.me/'..bot.username}
+    		{text = '🙃👉اینجا بزن! 👈🙃', url = 'https://telegram.me/'..bot.username}
 	    }
     }
     return keyboard
@@ -37,14 +37,14 @@ local function do_keyboard_channel()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '📲 AppRoids', url = 'https://telegram.me/AppRoids'},
+    		{text = '📲 اپ رویدس', url = 'https://telegram.me/AppRoids'},
 	    },
 	{
-	        		{text = '🔗 TgLand', url = 'https://telegram.me/TgLand'},
+	        		{text = '🔗 تی جی لند', url = 'https://telegram.me/TgLand'},
 
     },
 		{
-	    {text = '🔙 Back To Home', callback_data = '!private'}
+	    {text = '🔙 برگشت', callback_data = '!private'}
         }
     
     }
@@ -73,18 +73,18 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
         if query == 'channel' then
-            local text = '📡 *Channels*'
+            local text = '📡 *کانال ها*'
             local keyboard = do_keyboard_channel()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'robot' then
-            local text = [[🔸Other
-*Other Information from Team* 😃]]
+            local text = [[🔸دیگر
+_اطلاعات دیگری در مورد ربات _( 😃]]
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
 if query == 'home' then
-            local text = [[🔥 The *KeyWord* Info Part _Select One_]]
+            local text = [[🔥 بخش _اطلاعات دیگر_ ربات کیوورد]]
             local keyboard = do_keyboard_home()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
