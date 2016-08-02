@@ -44,7 +44,7 @@ bot_init = function(on_reload) -- The function run when the bot is started or re
 	print('\n'..clr.blue..'BOT RUNNING:'..clr.reset, clr.red..'[@'..bot.username .. '] [' .. bot.first_name ..'] ['..bot.id..']'..clr.reset..'\n')
 	if not on_reload then
 		db:hincrby('bot:general', 'starts', 1)
-		api.sendAdmin('_ربات اجرا شد_\n_'..os.date('On %A, %d %B %Y\nAt %X')..'_\n'..#plugins..' پلاگینااجرا شد' true)
+		api.sendAdmin('_ربات اجرا شد_\n_'..os.date('On %A, %d %B %Y\nAt %X')..'_\n'..#plugins..' پلاگینااجرا شد', true)
 	end
 	
 	-- Generate a random seed and "pop" the first random number. :)
