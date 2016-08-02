@@ -419,6 +419,8 @@ return {
              media_first = 'Tap on a voice in the right colon to *change the setting*\n'
                          ..'You can use the last line to change how many warnings should the bot give before kick/ban someone for a forbidden media\n'
                          ..'The number is not related the the normal `/warn` command',
+        },
+
     en = {
         status = {
             kicked = '&&&1 is banned from this group',
@@ -839,6 +841,6 @@ return {
             media_first = 'Tap on a voice in the right colon to *change the setting*\n'
                         ..'You can use the last line to change how many warnings should the bot give before kick/ban someone for a forbidden media\n'
                         ..'The number is not related the the normal `/warn` command',
-         },
-     },
+         }
+     }
 }
