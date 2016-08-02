@@ -166,7 +166,7 @@ end
 
 local function adminsettings_table(settings)
     local return_table = {}
-    local icon_yes, icon_no = '🚫 ممنوع ', '✅' مجاز 
+    local icon_yes, icon_no = '🚫', '✅' 
     for field, status in pairs(settings) do
         if field == 'Flood' or field == 'Report' or field == 'Welcome' or field == 'Admin_mode' then
             if status == 'yes' then
