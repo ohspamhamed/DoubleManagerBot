@@ -13,7 +13,7 @@ local function doKeyboard_media(chat_id)
     for i,media in pairs(config.media_list) do
     	local status = (db:hget('chat:'..chat_id..':media', media)) or 'allowed'
         if status == 'allowed' then
-            status = '☘ باز'
+            status = '✅ باز'
         else
             status = '🔐 قفل'..status
         end
