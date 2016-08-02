@@ -69,7 +69,6 @@ local function do_keyboard_private()
             },
             {
     		{text = '🐳 ایدی ادمین', url = 'https://telegram.me/Arian721'},
-    		{text = '🐳 ایدی ادمین', url = 'https://telegram.me/Kiarash_Gh14'},
 	    },
 	    {
 	        {text = '🐳 همه دستورات گروه', callback_data = '!user'},
@@ -78,7 +77,10 @@ local function do_keyboard_private()
 	        {text = '🎩 گروه ساپورت', url = 'https://telegram.me/joinchat/ChhotD9mfPqPZByA3yaQ-Q'},
             },
             {
-          {text = 'ℹ اطلاعات بیشتر', callback_data = '!home'}
+          {text = 'ℹ اطلاعات بیشتر', callback_data = '!home'},
+            },
+            {
+          {text = '✅ چت با ادمین', callback_data = '/chat'}
             }
     }
     return keyboard
