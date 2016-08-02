@@ -10,7 +10,7 @@ return {
 		}
 	},
 	log_chat = -1001064316186,
-	channel = '@AppRoids', --channel username with the '@'
+	channel = '@KeyWordCh', --channel username with the '@'
 	help_group = 'https://telegram.me/joinchat/ChhotD98OCbFK7mu1RTcUA', --group link, not username!
 	languages = 'languages.lua',
 	plugins = {
