@@ -17,7 +17,7 @@ if chat_info == 'block' then
  api.sendMessage(msg.chat.id, '`- Sorry !`\n_You are Blocked_', true) 
 else
  db:hset(hash, user_id, 'true')
- api.sendMessage(msg.chat.id, '*- چت شروع شد*\nپیام خود را ارسال کنید, true) 
+ api.sendMessage(msg.chat.id, '*- چت شروع شد*\nپیام خود را ارسال کنید' ,true) 
  end
  end
 if blocks[1] == 'end' then
