@@ -53,23 +53,6 @@ local function do_keyboard_channel()
     return keyboard
 end
 
-local action = function(msg, blocks, ln)
-    if blocks[1] == 'start' then
-        db:hset('bot:users', msg.from.id, 'xx')
-        db:hincrby('bot:general', 'users', 1)
-        if msg.chat.type == 'private' then
-            local message = [[📍 *Welcome BeatBotTeam Official Bot*  📍
--------------------------------------------------------------
-🗣 `Please select an option ...`]]
-            local keyboard = do_keyboard_private()
-            api.sendKeyboard(msg.from.id, message, keyboard, true)
-            end
-			if msg.chat.type == 'group' or msg.chat.type == 'supergroup' then
-          api.sendKeyboard(msg.chat.id, 'Hey 👋 Please `start` me in *PV* 🖐😄👇' ,do_keyboard_startme(), true)
-        end
-        return
-    end
-
     if msg.cb then
         local query = blocks[1]
         local msg_id = msg.message_id
