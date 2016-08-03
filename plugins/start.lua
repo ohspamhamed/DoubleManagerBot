@@ -54,7 +54,7 @@ local function do_keyboard_channel()
 end
 
 local action = function(msg, blocks, ln)
-    if blocks[1] == 'start' or blocks[1] == 'helps' then
+    if blocks[1] == 'start' then
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
@@ -97,9 +97,8 @@ end
 return {
 	action = action,
 	triggers = {
-	    '^/(starts)@KeyWordRobot$',
-	    '^/(starts)$',
-	    '^/(helps)$',
+	    '^/(start)@KeyWordRobot$',
+	    '^/(start)$',
 	    '^###cb:!(home)',
 	    '^###cb:!(channel)',
 	    '^###cb:!(robot)',
