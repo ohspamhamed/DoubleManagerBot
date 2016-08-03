@@ -153,7 +153,7 @@ return {
  		     private = 'Hello *1&&&8!\n'
                     ..'I\'m a simple bot created in order to help people to manage their groups.\n'
                     ..'\n*and what I can do to help you?*\n'
-                    ..'Great, I'm a lot more functionality\n'
+                    ..'Wew, I have a lot of useful tools!\n'
                     ..'• You can not dismiss users in groups or disadvantaged groups (even in typical)\n'
                     ..'• ✍🏻 can write rules and explanations for\n'
                     ..'• 🔰i can I enable advanced anti-spam system, and can expel members that do advertise in your group (the media settings) 🔰\n'
