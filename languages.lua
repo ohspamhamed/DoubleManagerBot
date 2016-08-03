@@ -150,19 +150,17 @@ return {
                     ..'`/c` <feedback> : send a feedback/report a bug/ask a question to my creator. _ANY KIND OF SUGGESTION OR FEATURE REQUEST IS WELCOME_. He will reply ASAP\n'
                     ..'`/help` : show this message.'
 		            ..'\n\nIf you like this bot, please leave the vote you think it deserves [here](https://telegram.me/storebot?start=groupbutler_bot)',
- 		     private = 'Hello *1&&&8!\n'
-                    ..'I\'m a simple bot created in order to help people to manage their groups.\n'
-                    ..'\n*and what I can do to help you?*\n'
-                    ..'Wew, I have a lot of useful tools!\n'
-                    ..'• You can not dismiss users in groups or disadvantaged groups (even in typical)\n'
-                    ..'• ✍🏻 can write rules and explanations for\n'
-                    ..'• 🔰i can I enable advanced anti-spam system, and can expel members that do advertise in your group (the media settings) 🔰\n'
-                    ..'• 🗣 welcome message can you give to users and even does this for the first time telegram with stickers or Gyf 🌠 do �.\n'
-                    ..'• ⚠️ can warn users and heavy users who were warned not fired! ️ \n'
-                    ..'• Can you manage media sent to Group : Gif 🌠, photo 🌅, Video📼, voice recordings 🗣, number of contacts on 👥, stickers 🏖, Link Group\n'
+		     private = 'Hi, *&&&1*!\n'
+                    ..'I am  a groupmanager bot🤗\n'
+                    ..'\n_How i can helping you?_\n'
+                    ..'I have a lots of tools\n'
+                    ..'• You cabln kick or ban any one (in Group and in SuperGroup its not diffrent)\n'
+                    ..'• ✍🏻 You can write tules and about for your group\n'
+                    ..'• 🔰وand You can enable my Anti-Spam in (settings)and and any one send spam or ads I can kick him🔰\n'
+                    ..'• ⚠️I can send warn to any Ican manage any media to sent group : gif - photo - sticker - film\n'
                     ..'...\n'
-                    ..'To do the above please give me the director of the \n [🐳 How To Make Admin KeyWord 🐳] (https://telegram.me/KeyWordCh/2)\n'
-                    ..'💻 Developer: [Arian] (https://telegram.me/arian721)\n',
+                    ..'For use me geting admin me in your group \n[ 🐳 how admin KeyWorr in Gp? 🐳](https://telegram.me/KeyWordCh/2) \n'
+                    ..'💻 Developer : [Arian](https://telegram.me/arian721) \n',
             group_success = '_I\'ve sent you the help message in private_',
             group_not_success = '_Please message me first so I can message you_',
             initial = 'Choose the *role* to see the available commands:',
