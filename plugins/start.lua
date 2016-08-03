@@ -46,7 +46,7 @@ local function do_keyboard_channel()
 
     },
 		{
-	    {text = '🔙 برگشت', callback_data = '!private'}
+	    {text = '🔙 برگشت', callback_data = '!home'}
         }
     
     }
@@ -54,7 +54,7 @@ local function do_keyboard_channel()
 end
 
 local action = function(msg, blocks, ln)
-    if blocks[1] == 'starts' or blocks[1] == 'helps' then
+    if blocks[1] == 'start' or blocks[1] == 'helps' then
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
