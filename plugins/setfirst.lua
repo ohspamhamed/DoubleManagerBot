@@ -30,21 +30,6 @@ local action = function(msg, blocks, ln)
         end
         return
     end
-        local res = api.sendKeyboard(msg.from.id, 'Select One Of This *Keyboards* :)', keyboard, true)
-        if res then
-            api.sendMessage(msg.chat.id, lang[ln].help.group_success, true)
-        else
-            api.sendKeyboard(msg.chat.id, lang[ln].help.group_not_success, do_keyboard_startme(), true)
-        end
-    end
-    if msg.cb then
-        local query = blocks[1]
-        local text
-        if query == 'info_button' then
-            keyboard = do_keybaord_credits()
-		    api.editMessageText(msg.chat.id, msg.message_id, lang[ln].credits, keyboard, true)
-		    return
-		end
  
     end
 end
