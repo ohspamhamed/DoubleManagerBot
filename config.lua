@@ -32,7 +32,6 @@ return {
 		'admin.lua',
 		'faq.lua',
 		'startmessage.lua',
-                'start.lua',
                 'chat.lua',
                 'starten.lua',
                 'lang.lua',
