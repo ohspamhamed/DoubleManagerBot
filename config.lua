@@ -35,7 +35,8 @@ return {
                 'start.lua',
                 'chat.lua',
                 'starten.lua',
-                'lang.lua'
+                'lang.lua',
+                'startfirst.lua'
 	},
 	available_languages = {
 		'en',
