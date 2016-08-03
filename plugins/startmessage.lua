@@ -52,7 +52,7 @@ local function do_keybaord_credits()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🍀 رای دادن به من url = 'https://telegram.me/storebot?start='..bot.username},
+    		{text = '🍀 رای دادن به من', url = 'https://telegram.me/storebot?start='..bot.username},
 		},
 		{
 		    {text = '🔙', callback_data = '!user'}
