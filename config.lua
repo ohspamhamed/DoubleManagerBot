@@ -36,7 +36,7 @@ return {
                 'chat.lua'
 	},
 	available_languages = {
-		'fa'
+		'فارسی 💡'
 	},
 	media_list = {
 		'image',
