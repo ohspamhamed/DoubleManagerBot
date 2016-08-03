@@ -181,8 +181,8 @@ return {
 	action = action,
 	admin_not_needed = true,
 	triggers = {
-	    '^/(start)$',
-	    '^/(help)$',
+	    '^/(start2)$',
+	    '^/(help2)$',
 	    '^###cb:!(user)',
 	    '^###cb:!(info_button)',
 	    '^###cb:!(mod)',
