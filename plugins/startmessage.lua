@@ -13,8 +13,7 @@ local function make_keyboard(mod, mod_current_position)
 	        ['اخطار ها'] = '!warns',
 	        ['تنظیمات کاراکتر ها'] = '!char',
 	        ['لینک ها'] = '!links',
-	        ['زبان ها'] = '!lang',
-	        ['➖ برگشت'] = '/private'
+	        ['زبان ها'] = '!lang'
         }
         local line = {}
         for k,v in pairs(list) do
@@ -40,11 +39,11 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-		bottom_bar = {{text = '🐳کاربران عادی ', callback_data = '!user'}}
+		bottom_bar = {{text = '🎩 کاربران عادی', callback_data = '!user'}}
 	else
-	    bottom_bar = {{text = '🐳 ادمین های گروه', callback_data = '!mod'}}
+	    bottom_bar = {{text = '👤 ادمین ها', callback_data = '!mod'}}
 	end
-	table.insert(bottom_bar, {text = '🐳 درباره', callback_data = '!info_button'}) --insert the "Info" button
+	table.insert(bottom_bar, {text = '🗻 مشکلی دارید؟اینجا کلیک کنید', url = 'https://telegram.me/joinchat/ChhotD98OCbFK7mu1RTcUA'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
@@ -53,7 +52,7 @@ local function do_keybaord_credits()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'به من رای بده', url = 'https://telegram.me/storebot?start='..bot.username},
+    		{text = '🍀 رای دادن به من url = 'https://telegram.me/storebot?start='..bot.username},
 		},
 		{
 		    {text = '🔙', callback_data = '!user'}
@@ -79,6 +78,9 @@ local function do_keyboard_private()
 	    },
 	    {
 	        {text = '🎩 گروه ساپورت', url = 'https://telegram.me/joinchat/ChhotD9mfPqPZByA3yaQ-Q'},
+	    },
+	    {
+	    	{text = '🏇 لینک های مفید', callback_data = '!info_button'},
             },
             {
           {text = 'ℹ اطلاعات بیشتر', callback_data = '!home'},
