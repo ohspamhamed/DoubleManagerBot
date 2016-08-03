@@ -158,9 +158,9 @@ return {
                     ..'• ✍🏻*You can write tules and about for your group*\n'
                     ..'• 🔰*I Auto Switch AntiSpam Mode!*🔰\n'
                     ..'• ⚠*You Can Warn USers When They Sends : gif - photo - sticker - film*\n'
-                    ..'...\n'
                     ..'•For use me geting admin me in your group \n[ 🐳 How To Make KeyWord Admin Of SuperGroups Or Groups 🐳](https://telegram.me/KeyWordCh/2) \n'
-                    ..'💻 Developer : [Arian](https://telegram.me/arian721) \n',
+                    ..'💻 Developer : [Arian](https://telegram.me/arian721) \n'
+                    ..'For Change Languages To *Persian*,Send /lang Then Click On Fa\n',
             group_success = '_I\'ve sent you the help message in private_',
             group_not_success = '_Please message me first so I can message you_',
             initial = 'Choose the *role* to see the available commands:',
@@ -580,9 +580,9 @@ return {
                     ..'• 🗣 میتوانم پیام خوش آمد گویی مورد نظر شما را به کاربران بدم و حتی میتوانید اینکارا برای اولین بار در تلگرام با استیکر 🏖 یا گیف 🌠 انجام دهم.\n'
                     ..'• ⚠️ می توانم به کاربران اخطار بدم و کاربرانی که اخطار زیاد گرفتند را اخراج کنم‼️\n'
                     ..'• می توانم رسانه های ارسالی به گروه شما را مدیریت کنم : گیف 🌠، عکس 🌅، ویدئو📼، صدای ضبط شده 🗣، شماره مخطابین 👥، استیکر 🏖، لینک گروه 🌐\n'
-                    ..'...\n'
                     ..'برای انجام کارهای بالا لطفا من را مدیر گروه کنید \n[🐳 چگونه کیوورد را مدیر کنم؟🐳](https://telegram.me/KeyWordCh/2) \n'
-                    ..'💻 Developer : [Arian](https://telegram.me/arian721) \n',
+                    ..'💻 Developer : [Arian](https://telegram.me/arian721) \n'
+                    ..'برای تغیر زبان به _انگلیسی_ /lang را فرستاده و سپس روی en کلیک نمایید.\n',
            group_success = '_👤 پیام خصوصی فرستاده شد_',
              group_not_success = '_لطفا اول به من پیام دهید تا بتوانم به شما پیام بفرستم_',
              initial = 'نقش خود را انتخاب کنید تا بتوانید دستورها را ببینید:',
