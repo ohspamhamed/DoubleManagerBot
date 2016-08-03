@@ -60,9 +60,6 @@ return {
 	triggers = {
 	    '^/(start)@KeyWordRobot$',
 	    '^/(start)$',
-	    '^###cb:!(home)',
-	    '^###cb:!(channel)',
-	    '^###cb:!(robot)',
 
     }
 }
