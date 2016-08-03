@@ -14,10 +14,10 @@ local function do_keyboard_home()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🌐 محل تبلیغ شما , url = 'http://telegram.me/arian721'},
+    		{text = '🌐 محل تبلیغ شما', url = 'http://telegram.me/arian721'},
     	},
             {
-    		{text = '📡 کانال ها'ی فان, callback_data = '!channel'},
+    		{text = '📡 کانال های فان', callback_data = '!channel'},
         },
 	    {
 	        {text = '🔸دیگر', callback_data = '!robot'}
