@@ -151,15 +151,15 @@ return {
                     ..'`/help` : show this message.'
 		            ..'\n\nIf you like this bot, please leave the vote you think it deserves [here](https://telegram.me/storebot?start=groupbutler_bot)',
 		     private = 'Hi, *&&&1*!\n'
-                    ..'I am  a groupmanager bot🤗\n'
+                    ..'I/m KeyWord~Im Manneging up 100 Groups!🤗\n'
                     ..'\n_How i can helping you?_\n'
-                    ..'I have a lots of tools\n'
-                    ..'• You cabln kick or ban any one (in Group and in SuperGroup its not diffrent)\n'
-                    ..'• ✍🏻 You can write tules and about for your group\n'
-                    ..'• 🔰وand You can enable my Anti-Spam in (settings)and and any one send spam or ads I can kick him🔰\n'
-                    ..'• ⚠️I can send warn to any Ican manage any media to sent group : gif - photo - sticker - film\n'
+                    ..'🎩* I Can Do Them:*\n'
+                    ..'• *You Can Kick Or Ban USers In GRoups Or Super Groups*\n'
+                    ..'• ✍🏻*You can write tules and about for your group*\n'
+                    ..'• 🔰*I Auto Switch AntiSpam Mode!*🔰\n'
+                    ..'• ⚠*You Can Warn USers When They Sends : gif - photo - sticker - film*\n'
                     ..'...\n'
-                    ..'For use me geting admin me in your group \n[ 🐳 how admin KeyWorr in Gp? 🐳](https://telegram.me/KeyWordCh/2) \n'
+                    ..'•For use me geting admin me in your group \n[ 🐳 How To Make KeyWord Admin Of SuperGroups Or Groups 🐳](https://telegram.me/KeyWordCh/2) \n'
                     ..'💻 Developer : [Arian](https://telegram.me/arian721) \n',
             group_success = '_I\'ve sent you the help message in private_',
             group_not_success = '_Please message me first so I can message you_',
