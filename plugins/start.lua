@@ -2,7 +2,7 @@ local function do_keyboard_robot()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = 'در حال اپدیت ℹ🏾', callback_data = '!sharee'},
+    					{text = 'در حال اپدیت ℹ🏾', callback_data = '!sha'},
     					},
                                         {
 	    {text = '🔙 برگشت', callback_data = '!home'}
@@ -14,8 +14,10 @@ local function do_keyboard_home()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🌐 تبلیغ شما', url = 'http://telegram.me/arian721'},
-    		{text = '📡 کانال ها', callback_data = '!channel'},
+    		{text = '🌐 محل تبلیغ شما , url = 'http://telegram.me/arian721'},
+    	},
+            {
+    		{text = '📡 کانال ها'ی فان, callback_data = '!channel'},
         },
 	    {
 	        {text = '🔸دیگر', callback_data = '!robot'}
@@ -87,9 +89,6 @@ if query == 'home' then
             local text = [[🔥 بخش _اطلاعات دیگر_ ربات کیوورد]]
             local keyboard = do_keyboard_home()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
-end
-if query == 'share' then
-     api.sendContact(msg.from.id, '+12818539367', 'Arian')
 end
     end
 
