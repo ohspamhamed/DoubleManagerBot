@@ -1,5 +1,5 @@
 return {
-	bot_api_key = '252711575:AAHfWNHINtMhnXiK5Hd2xdmfRzG8KWfqyss',
+	bot_api_key = '252711575:AAGg0JnfdnDmFKk7I-k11QgjZJsOfZWsgK0',
 	version = '3.1', -- /aupdate for v3.1
 	testing_mode = false,
 	admin = {
