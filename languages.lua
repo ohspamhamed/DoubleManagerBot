@@ -151,18 +151,18 @@ return {
                     ..'`/help` : show this message.'
 		            ..'\n\nIf you like this bot, please leave the vote you think it deserves [here](https://telegram.me/storebot?start=groupbutler_bot)',
  		     private = 'Hello *1&&&8!\n'
-                     ..'I'm a robot to manage the Group now manages over 1000 Group I 🤗\n'
-                     ..'\n*and what I can do to help you?*\n'
-                     ..'Great, I'm a lot more functionality\n'
-                     ..'• You can not dismiss users in groups or disadvantaged groups (even in typical)\n'
-                     ..'• ✍🏻 can write rules and explanations for\n'
-                     ..'• 🔰i can I enable advanced anti-spam system, and can expel members that do advertise in your group (the media settings) 🔰\n'
-                     ..'• 🗣 welcome message can you give to users and even does this for the first time telegram with stickers or Gyf 🌠 do �.\n'
-                     ..'• ⚠️ can warn users and heavy users who were warned not fired! ️ \n'
-                     ..'• Can you manage media sent to Group : Gif 🌠, photo 🌅, Video📼, voice recordings 🗣, number of contacts on 👥, stickers 🏖, Link Group\n'
-                     ..'...\n'
-                     ..'To do the above please give me the director of the \n [🐳 How To Make Admin KeyWord 🐳] (https://telegram.me/KeyWordCh/2)\n'
-                     ..'💻 Developer: [Arian] (https://telegram.me/arian721)\n',
+                    ..'I\'m a simple bot created in order to help people to manage their groups.\n'
+                    ..'\n*and what I can do to help you?*\n'
+                    ..'Great, I'm a lot more functionality\n'
+                    ..'• You can not dismiss users in groups or disadvantaged groups (even in typical)\n'
+                    ..'• ✍🏻 can write rules and explanations for\n'
+                    ..'• 🔰i can I enable advanced anti-spam system, and can expel members that do advertise in your group (the media settings) 🔰\n'
+                    ..'• 🗣 welcome message can you give to users and even does this for the first time telegram with stickers or Gyf 🌠 do �.\n'
+                    ..'• ⚠️ can warn users and heavy users who were warned not fired! ️ \n'
+                    ..'• Can you manage media sent to Group : Gif 🌠, photo 🌅, Video📼, voice recordings 🗣, number of contacts on 👥, stickers 🏖, Link Group\n'
+                    ..'...\n'
+                    ..'To do the above please give me the director of the \n [🐳 How To Make Admin KeyWord 🐳] (https://telegram.me/KeyWordCh/2)\n'
+                    ..'💻 Developer: [Arian] (https://telegram.me/arian721)\n',
             group_success = '_I\'ve sent you the help message in private_',
             group_not_success = '_Please message me first so I can message you_',
             initial = 'Choose the *role* to see the available commands:',
