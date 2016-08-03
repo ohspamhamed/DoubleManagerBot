@@ -19,7 +19,7 @@ local action = function(msg, blocks, ln)
 	
 	local keyboard
 	
-	if blocks[1] == 'lang' and not blocks[2] then
+	if blocks[1] == 'lng' and not blocks[2] then
 		keyboard = doKeyboard_lang()
 		
 		api.sendKeyboard(msg.chat.id, lang[ln].setlang.list, keyboard, true)
@@ -34,7 +34,7 @@ end
 return {
 	action = action,
 	triggers = {
-		'^/(lang)$',
+		'^/(lng)$',
 		'^###cb:(langselected):(%a%a)$'
 	}
 }
