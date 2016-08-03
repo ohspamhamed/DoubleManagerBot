@@ -36,7 +36,8 @@ return {
                 'chat.lua'
 	},
 	available_languages = {
-		'Persian'
+		'Fa',
+		'en'
 	},
 	media_list = {
 		'image',
