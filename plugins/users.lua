@@ -74,7 +74,7 @@ local function do_keyboard_userinfo(user_id, ln)
 	local keyboard = {
 		inline_keyboard = {
 			{{text = lang[ln].userinfo.remwarns_kb, callback_data = 'userbutton:remwarns:'..user_id}},
-			{{text ='🔨 Ban', callback_data = 'userbutton:banuser:'..user_id}},
+			{{text ='🔨 بن/مسدود کردن این کاربر', callback_data = 'userbutton:banuser:'..user_id}},
 		}
 	}
 	
@@ -102,7 +102,7 @@ local function get_userinfo(user_id, chat_id, ln)
 end
 
 local action = function(msg, blocks, ln)
-    if blocks[1] == 'adminlist' then
+    if blocks[1] == 'admins' then
     	if msg.chat.type == 'private' then return end
     	local no_usernames
     	local send_reply = true
@@ -153,7 +153,7 @@ local action = function(msg, blocks, ln)
 		 	end
 	 	end
  	end
- 	if blocks[1] == 'id' then
+ 	if blocks[1] == 'tgid' then
  		if not(msg.chat.type == 'private') and not is_mod(msg) then return end
  		local id
  		if msg.reply then
@@ -170,7 +170,7 @@ local action = function(msg, blocks, ln)
         local message = cross.getSettings(msg.chat.id, ln)
         api.sendReply(msg, message, true)
     end
-    if blocks[1] == 'welcome' then
+    if blocks[1] == 'wel' then
         
         if msg.chat.type == 'private' or not is_mod(msg) then return end
         
@@ -416,8 +416,8 @@ end
 return {
 	action = action,
 	triggers = {
-		'^/(id)$',
-		'^/(adminlist)$',
+		'^/(tgid)$',
+		'^/(admins)$',
 		'^/(status) (@[%w_]+)$',
 		'^/(status) (%d+)$',
 		'^/(settings)$',
@@ -425,7 +425,7 @@ return {
 		'^/(export)(save)$',
 		'^/(importban)$',
 		'^/(group)$',
-		'^/(welcome) (.*)$',
+		'^/(wel) (.*)$',
 		
 		'^/(user)$',
 		'^/(user) (@[%w_]+)$',
