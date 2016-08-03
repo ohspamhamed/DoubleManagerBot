@@ -13,7 +13,8 @@ local function make_keyboard(mod, mod_current_position)
 	        ['اخطار ها'] = '!warns',
 	        ['تنظیمات کاراکتر ها'] = '!char',
 	        ['لینک ها'] = '!links',
-	        ['زبان ها'] = '!lang'
+	        ['زبان ها'] = '!lang',
+	        ['➖ برگشت'] = '/private'
         }
         local line = {}
         for k,v in pairs(list) do
@@ -65,10 +66,13 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '👥 اضافه کردن من به گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
+    		{text = '👥 اد در گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
             },
             {
-    		{text = '🐳 ایدی ادمین', url = 'https://telegram.me/Arian721'},
+    		{text = '👤 ایدی ادمین', url = 'https://telegram.me/Arian721'},
+	    },
+	    {
+	    	{text = '📣 کانال ما', url = 'https://telegram.me/keywordch'},
 	    },
 	    {
 	        {text = '🐳 همه دستورات گروه', callback_data = '!user'},
