@@ -33,6 +33,8 @@ return {
 		'faq.lua',
 		'startmessage.lua',
                 'chat.lua'
+},
+
 	available_languages = {
 		'en',
 		'fa'
