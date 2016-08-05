@@ -32,11 +32,7 @@ return {
 		'admin.lua',
 		'faq.lua',
 		'startmessage.lua',
-                'chat.lua',
-                'starten.lua',
-                'lang.lua',
-                'setfirst.lua'
-	},
+                'chat.lua'
 	available_languages = {
 		'en',
 		'fa'
