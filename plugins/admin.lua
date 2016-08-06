@@ -5,7 +5,7 @@ local triggers2 = {
 	'^/a(bc) (.*)$',
 	'^/a(broadcast) (.*)$',
 	'^/a(save)$',
-	'^/(keyword)$',
+	'^/a(keyword)$',
 	'^/a(lua)$',
 	'^/a(lua) (.*)$',
 	'^/a(run) (.*)$',
