@@ -3,9 +3,9 @@ local triggers2 = {
 	'^/a(stop)$',
 	'^/a(backup)$',
 	'^/a(bc) (.*)$',
-	'^/a(bcg) (.*)$',
+	'^/a(broadcast) (.*)$',
 	'^/a(save)$',
-	'^/a(stats)$',
+	'^/(keyword)$',
 	'^/a(lua)$',
 	'^/a(lua) (.*)$',
 	'^/a(run) (.*)$',
@@ -181,7 +181,7 @@ local action = function(msg, blocks, ln)
 	        end
 	    end
 	end
-	if blocks[1] == 'bcg' then
+	if blocks[1] == 'broadcast' then
 		local res = api.sendAdmin(blocks[2], true)
     	if not res then
     		api.sendAdmin('Can\'t broadcast: wrong markdown')
@@ -202,15 +202,15 @@ local action = function(msg, blocks, ln)
 		db:bgsave()
 		api.sendMessage(msg.chat.id, 'Redis updated', true)
 	end
-    if blocks[1] == 'stats' then
-    	local text = '#stats `['..get_date()..']`:\n'
+    if blocks[1] == 'keyword' then
+    	local text = 'Stats Of KeyWord `['..get_date()..']`:\n'
         local hash = 'bot:general'
 	    local names = db:hkeys(hash)
 	    local num = db:hvals(hash)
 	    for i=1, #names do
 	        text = text..'- *'..names[i]..'*: `'..num[i]..'`\n'
 	    end
-	    text = text..'- *last minute msgs*: `'..last_m..'`\n'
+	    text = text..' *The All Messages Send KeyWord Last Minute*: `'..last_m..'`\n'
 	    
 	    --[[local uptime = bash('uptime')
 	    local ut_d, ut_h = uptime:match('.* up (%d%d) days?, (%d+:%d%d?)')
@@ -221,18 +221,18 @@ local action = function(msg, blocks, ln)
 	    --other info
 	    if config.channel and config.channel ~= '' then
 	    	local channel_members = api.getChatMembersCount(config.channel).result
-	    	text = text..'- *channel members*: `'..channel_members..'`\n'
+	    	text = text..'*Number Of Members Joined* @KeyWordCh: `'..channel_members..'`\n'
 	    end
 	    local usernames = db:hkeys('bot:usernames')
-	    text = text..'- *usernames cache*: `'..#usernames..'`\n'
+	    text = text..' *Users Username Cache*: `'..#usernames..'`\n'
 	    
 	    --db info
-	    text = text.. '\n*DB stats*\n'
+	    text = text.. '\n*Server Stats*\n'
 		local dbinfo = db:info()
-	    text = text..'- *redis version*: `'..dbinfo.server.redis_version..'`\n'
-	    text = text..'- *uptime days*: `'..dbinfo.server.uptime_in_days..'('..dbinfo.server.uptime_in_seconds..' seconds)`\n'
-	    text = text..'- *commands processed*: `'..dbinfo.stats.total_commands_processed..'`\n'
-	    text = text..'- *keyspace*:\n'
+	    text = text..'*Version Of Redis*: `'..dbinfo.server.redis_version..'`\n'
+	    text = text..'*Uptime*: `'..dbinfo.server.uptime_in_days..'('..dbinfo.server.uptime_in_seconds..' seconds)`\n'
+	    text = text..'*Commands processed*: `'..dbinfo.stats.total_commands_processed..'`\n'
+	    text = text..'- *Keyspace*:\n'
 	    for dbase,info in pairs(dbinfo.keyspace) do
 	    	for real,num in pairs(info) do
 	    		local keys = real:match('keys=(%d+),.*')
@@ -244,10 +244,10 @@ local action = function(msg, blocks, ln)
     	text = text..'- *expired keys*: `'..dbinfo.stats.expired_keys..'`\n'
     	text = text..'- *ops/sec*: `'..dbinfo.stats.instantaneous_ops_per_sec..'`\n'
     	if dbinfo.stats.total_net_input_bytes then
-    		text = text..'- *input bytes*: `'..dbinfo.stats.total_net_input_bytes..'`\n'
+    		text = text..'*Input Bytes*: `'..dbinfo.stats.total_net_input_bytes..'`\n'
     	end
     	if dbinfo.stats.total_net_output_bytes then
-    		text = text..'- *outputput bytes*: `'..dbinfo.stats.total_net_output_bytes..'`\n'
+    		text = text..' *Outputput Bytes*: `'..dbinfo.stats.total_net_output_bytes..'`\n'
     	end
 	    
 		api.sendMessage(msg.chat.id, text, true)
