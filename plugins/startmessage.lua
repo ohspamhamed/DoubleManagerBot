@@ -57,7 +57,7 @@ local function do_keybaord_credits()
     		{text = '🍀 رای دادن به من', url = 'https://telegram.me/storebot?start='..bot.username},
 		},
 		{
-		    {text = '🔙', callback_data = '/start'}
+		    {text = '🔙', callback_data = '!home'}
         }
 	}
 	return keyboard
@@ -106,24 +106,14 @@ end
 
 local action = function(msg, blocks, ln)
     -- save stats
-    if blocks[1] == 'start' then
+if blocks[1] == 'start' or blocks[1] == 'help' then
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = make_text(lang[ln].help.private, msg.from.first_name:mEscape())
+            local message = [[📍 Salam ]]
             local keyboard = do_keyboard_private()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
-        end
-        return
-    end
-    local keyboard = make_keyboard()
-    if blocks[1] == 'help' then
-        if msg.chat.type == 'private' then
-            local message = make_text(lang[ln].help.private, msg.from.first_name:mEscape())
-            local keyboard = do_keyboard_private()
-            api.sendKeyboard(msg.from.id, message, keyboard, true)
-            return
-        end
+            end
         local res = api.sendKeyboard(msg.from.id, 'Select One Of This *Keyboards* :)', keyboard, true)
         if res then
             api.sendMessage(msg.chat.id, lang[ln].help.group_success, true)
@@ -139,6 +129,11 @@ local action = function(msg, blocks, ln)
 		    api.editMessageText(msg.chat.id, msg.message_id, lang[ln].credits, keyboard, true)
 		    return
 		end
+if query == 'home' then
+            local text = [[Salam...]]
+            local keyboard = do_keyboard_private()
+        api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
+end
         local with_mods_lines = true
         if query == 'user' then
             text = lang[ln].help.all
@@ -185,6 +180,7 @@ return {
 	triggers = {
 	    '^/(start)$',
 	    '^/(help)$',
+	    '^###cb:!(home)',
 	    '^###cb:!(user)',
 	    '^###cb:!(info_button)',
 	    '^###cb:!(mod)',
