@@ -9,7 +9,7 @@ return {
 			[107775857] = true
 		}
 	},
-	log_chat = -1001064316186,
+	log_chat = ,
 	channel = '@KeyWordCh', --channel username with the '@'
 	help_group = 'https://telegram.me/joinchat/ChhotD98OCbFK7mu1RTcUA', --group link, not username!
 	languages = 'languages.lua',
