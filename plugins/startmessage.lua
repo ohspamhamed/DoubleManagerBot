@@ -1,19 +1,20 @@
+
 local function make_keyboard(mod, mod_current_position)
-	local keyboard = {}
-	keyboard.inline_keyboard = {}
-	if mod then --extra options for the mod
-	    local list = {
-	        ['بن/مسدود کردن'] = '!banhammer',
-	        ['اطلاعات گروه'] = '!info',
-	        ['فلود منیجر'] = '!flood',
-	        ['تنظیمات مدیا'] = '!media',
-	        ['تنظیمات خوش آمد گویی'] = '!welcome',
-	        ['تنظیمات ظاهری'] = '!settings',
-	        ['دستورات پیشرفته'] = '!extra',
-	        ['اخطار ها'] = '!warns',
-	        ['تنظیمات کاراکتر ها'] = '!char',
-	        ['لینک ها'] = '!links',
-	        ['زبان ها'] = '!lang'
+ local keyboard = {}
+ keyboard.inline_keyboard = {}
+ if mod then --extra options for the  mod
+     local list = {
+         ['بن/مسدود کردن'] = '!banhammer',
+         ['اطلاعات گروه'] = '!info',
+         ['فلود منیجر'] = '!flood',
+         ['تنظیمات مدیا'] = '!media',
+         ['تنظیمات خوش آمد گویی'] = '!welcome',
+         ['تنظیمات ظاهری'] = '!settings',
+         ['دستورات پیشرفته'] = '!extra',
+         ['اخطار ها'] = '!warns',
+         ['تنظیمات کاراکتر ها'] = '!char',
+         ['لینک ها'] = '!links',
+         ['زبان ها'] = '!lang'
         }
         local line = {}
         for k,v in pairs(list) do
@@ -39,48 +40,48 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-		bottom_bar = {{text = '🎩 کاربران عادی', callback_data = '!user'}}
-	else
-	    bottom_bar = {{text = '👤 ادمین ها', callback_data = '!mod'}}
-	end
-	table.insert(bottom_bar, {text = '🗻 مشکلی دارید؟اینجا کلیک کنید', url = 'https://telegram.me/joinchat/ChhotD98OCbFK7mu1RTcUA'})
-	table.insert(keyboard.inline_keyboard, bottom_bar)
-	return keyboard
+  bottom_bar = {{text = '🎩 کاربران عادی', callback_data = '!user'}}
+ else
+     bottom_bar = {{text = '👤 ادمین ها', callback_data = '!mod'}}
+ end
+ table.insert(bottom_bar, {text = '🗻 مشکلی دارید؟اینجا کلیک کنید', url = 'https://telegram.me/joinchat/ChhotD98OCbFK7mu1RTcUA'})
+ table.insert(keyboard.inline_keyboard, bottom_bar)
+ return keyboard
 end
 
 local function do_keybaord_credits()
-	local keyboard = {}
+ local keyboard = {}
     keyboard.inline_keyboard = {
-    	{
-    		{text = '🍀 رای دادن به من', url = 'https://telegram.me/storebot?start='..bot.username},
-		},
-		{
-		    {text = '🔙', callback_data = '!home'}
+     {
+      {text = '🍀 رای دادن به من', url = 'https://telegram.me/storebot?start='..bot.username},
+  },
+  {
+      {text = '🔙', callback_data = '!home'}
         }
-	}
-	return keyboard
+ }
+ return keyboard
 end
 
 local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
-    	{
-    		{text = '👥 اد در گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
+     {
+      {text = '👥 اد در گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
             },
             {
-    		{text = '👤 ایدی ادمین', url = 'https://telegram.me/Arian721'},
-	    },
-	    {
-	    	{text = '📣 کانال ما', url = 'https://telegram.me/keywordch'},
-	    },
-	    {
-	        {text = '🐳 همه دستورات گروه', callback_data = '!user'},
-	    },
-	    {
-	        {text = '🎩 گروه ساپورت', url = 'https://telegram.me/joinchat/ChhotD9mfPqPZByA3yaQ-Q'},
-	    },
-	    {
-	    	{text = '🏇 لینک های مفید', callback_data = '!info_button'},
+      {text = '👤 ایدی ادمین', url = 'https://telegram.me/Arian721'},
+     },
+     {
+      {text = '📣 کانال ما', url = 'https://telegram.me/keywordch'},
+     },
+     {
+         {text = '🐳 همه دستورات گروه', callback_data = '!user'},
+     },
+     {
+         {text = '🎩 گروه ساپورت', url = 'https://telegram.me/joinchat/ChhotD9mfPqPZByA3yaQ-Q'},
+     },
+     {
+      {text = '🏇 لینک های مفید', callback_data = '!info_button'},
             },
             {
           {text = 'ℹ اطلاعات بیشتر', callback_data = '!home'},
@@ -96,7 +97,7 @@ local function do_keyboard_startme()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'منو استارت کن 🐳', url = 'https://telegram.me/'..bot.username}
+    		{text = 'Start me', url = 'https://telegram.me/'..bot.username}
 	    }
     }
     return keyboard
@@ -129,6 +130,14 @@ local action = function(msg, blocks, ln)
             api.sendKeyboard(msg.chat.id, lang[ln].help.group_not_success, do_keyboard_startme(), true)
         end
     end
+    if msg.cb then
+        local query = blocks[1]
+        local text
+        if query == 'info_button' then
+            keyboard = do_keybaord_credits()
+		    api.editMessageText(msg.chat.id, msg.message_id, lang[ln].credits, keyboard, true)
+		    return
+		end
         local with_mods_lines = true
         if query == 'user' then
             text = lang[ln].help.all
@@ -162,9 +171,9 @@ local action = function(msg, blocks, ln)
         keyboard = make_keyboard(with_mods_lines, query)
         local res, code = api.editMessageText(msg.chat.id, msg.message_id, text, keyboard, true)
         if not res and code and code == 111 then
-            api.answerCallbackQuery(msg.cb_id, '❗️Error/Contact @Arian721')
+            api.answerCallbackQuery(msg.cb_id, '❗️ Already on this tab')
         elseif query ~= 'user' and query ~= 'mod' and query ~= 'info_button' then
-            api.answerCallbackQuery(msg.cb_id, '🐳 '..lang[ln].help.mods[query]:sub(1, string.find(lang[ln].help.mods[query], '\n')):mEscape_hard())
+            api.answerCallbackQuery(msg.cb_id, '💡 '..lang[ln].help.mods[query]:sub(1, string.find(lang[ln].help.mods[query], '\n')):mEscape_hard())
         end
     end
 end
@@ -175,7 +184,6 @@ return {
 	triggers = {
 	    '^/(start)$',
 	    '^/(help)$',
-	    '^###cb:!(home)',
 	    '^###cb:!(user)',
 	    '^###cb:!(info_button)',
 	    '^###cb:!(mod)',
