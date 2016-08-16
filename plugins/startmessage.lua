@@ -44,8 +44,6 @@ local function make_keyboard(mod, mod_current_position)
 	    bottom_bar = {{text = '👤 ادمین ها', callback_data = '!mod'}}
 	end
 	table.insert(bottom_bar, {text = '🗻 مشکلی دارید؟اینجا کلیک کنید', url = 'https://telegram.me/joinchat/ChhotD98OCbFK7mu1RTcUA'})
-        end
-        table.insert(bottom_bar, {text = '🏦 ارتباط با ادمین', url = 'https://telegram.me/arian721'})
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
