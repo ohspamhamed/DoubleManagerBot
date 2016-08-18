@@ -217,7 +217,10 @@ local action = function(msg, blocks, ln)
 	    local la_1, la_2, la_3 = uptime:match('.*(%d%d?%.%d%d), (%d%d?%.%d%d), (%d%d?%.%d%d)')
 	    local n_core = bash('grep processor /proc/cpuinfo | wc -l')
 	    text = text..'\n- *uptime*: `'..ut_d..'d, '..ut_h..'h`\n'..'- *load average* ('..n_core:gsub('\n', '')..'): `'..la_1..', '..la_2..', '..la_3..'`']]
-	    
+
+	    --[[local git_pull = bash('git_pull')
+	    local gitpull1, gitpull1 = git_pull:match('.* The (%d%d) Up?, (%d+:%d%d?)*')
+	    text = text..'\n- *Updates :*: *'..gitpull1..'d*']]	    
 	    --other info
 	    if config.channel and config.channel ~= '' then
 	    	local channel_members = api.getChatMembersCount(config.channel).result
@@ -231,7 +234,8 @@ local action = function(msg, blocks, ln)
 		local dbinfo = db:info()
 	    text = text..'*Version Of Redis*: `'..dbinfo.server.redis_version..'`\n'
 	    text = text..'*Uptime*: `'..dbinfo.server.uptime_in_days..'('..dbinfo.server.uptime_in_seconds..' seconds)`\n'
-	    text = text..'*Commands processed*: `'..dbinfo.stats.total_commands_processed..'`\n'
+    text = text..'*Git Pull*: `'..dbinfo.server.git_pull..'`\n'
+    text = text..'*Commands processed*: `'..dbinfo.stats.total_commands_processed..'`\n'
 	    text = text..'- *Keyspace*:\n'
 	    for dbase,info in pairs(dbinfo.keyspace) do
 	    	for real,num in pairs(info) do
