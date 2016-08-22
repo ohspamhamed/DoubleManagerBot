@@ -5,7 +5,7 @@ local triggers2 = {
 	'^/a(bc) (.*)$',
 	'^/a(broadcast) (.*)$',
 	'^/a(save)$',
-	'^/a(keyword)$',
+	'^/a(spamproof)$',
 	'^/a(lua)$',
 	'^/a(lua) (.*)$',
 	'^/a(run) (.*)$',
@@ -202,8 +202,8 @@ local action = function(msg, blocks, ln)
 		db:bgsave()
 		api.sendMessage(msg.chat.id, 'Redis updated', true)
 	end
-    if blocks[1] == 'keyword' then
-    	local text = 'Stats Of KeyWord `['..get_date()..']`:\n'
+    if blocks[1] == 'spamproof' then
+    	local text = 'Stats Of SpamProof `['..get_date()..']`:\n'
         local hash = 'bot:general'
 	    local names = db:hkeys(hash)
 	    local num = db:hvals(hash)
@@ -217,14 +217,9 @@ local action = function(msg, blocks, ln)
 	    local la_1, la_2, la_3 = uptime:match('.*(%d%d?%.%d%d), (%d%d?%.%d%d), (%d%d?%.%d%d)')
 	    local n_core = bash('grep processor /proc/cpuinfo | wc -l')
 	    text = text..'\n- *uptime*: `'..ut_d..'d, '..ut_h..'h`\n'..'- *load average* ('..n_core:gsub('\n', '')..'): `'..la_1..', '..la_2..', '..la_3..'`']]
-
-	    --[[local git_pull = bash('git_pull')
-	    local gitpull1, gitpull1 = git_pull:match('.* The (%d%d) Up?, (%d+:%d%d?)*')
-	    text = text..'\n- *Updates :*: *'..gitpull1..'d*']]	    
-	    --other info
 	    if config.channel and config.channel ~= '' then
 	    	local channel_members = api.getChatMembersCount(config.channel).result
-	    	text = text..'*Number Of Members Joined* @KeyWordCh: `'..channel_members..'`\n'
+	    	text = text..'*Number Of Members Joined* @SpamProofChannel: `'..channel_members..'`\n'
 	    end
 	    local usernames = db:hkeys('bot:usernames')
 	    text = text..' *Users Username Cache*: `'..#usernames..'`\n'
@@ -234,7 +229,6 @@ local action = function(msg, blocks, ln)
 		local dbinfo = db:info()
 	    text = text..'*Version Of Redis*: `'..dbinfo.server.redis_version..'`\n'
 	    text = text..'*Uptime*: `'..dbinfo.server.uptime_in_days..'('..dbinfo.server.uptime_in_seconds..' seconds)`\n'
-    text = text..'*Git Pull*: `'..dbinfo.server.git_pull..'`\n'
     text = text..'*Commands processed*: `'..dbinfo.stats.total_commands_processed..'`\n'
 	    text = text..'- *Keyspace*:\n'
 	    for dbase,info in pairs(dbinfo.keyspace) do
